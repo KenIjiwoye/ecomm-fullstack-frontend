@@ -3,20 +3,21 @@ import { Link } from 'react-router-dom'
 
 export default class ShopItem extends Component {
     render() {
-        const {  name, description, price } = this.props.product;
+        const {  name, description, price, _id } = this.props.product;
         const image = this.props.product.image.url;
         return (
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                 <Link to={{
-                    pathname: `/product/${name}`,
+                    pathname: `/product/${_id}`,
                     state: {
                         name,
                         image,
                         description,
-                        price
+                        price,
+                        id: _id
                     }
-                }} href="#"><img class="card-img-top" src={image} alt=""/></Link>
+                }}><img class="card-img-top" src={image} alt=""/></Link>
                 <div class="card-body">
                     <h4 class="card-title">
                     <a href="#">{name}</a>

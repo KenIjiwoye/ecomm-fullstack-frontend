@@ -1,13 +1,14 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy":"http://localhost:1337",
+  "proxy": "http://localhost:1337",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-snipcart": "^0.1.6"
   },
   "scripts": {
     "start": "react-scripts start",

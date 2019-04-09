@@ -16,6 +16,9 @@ export default class Navbar extends Component {
                     <Link to='/' className="nav-link" href="#">Home
                     </Link>
                   </li>
+                  <button className="btn btn-primary snipcart-checkout snipcart-summary">
+                      <i className="fa fa-shopping-cart"></i> Checkout (<span className="snipcart-total-items"></span>)
+                  </button>
                   {/* <li className="nav-item">
                     <Link to='/product' className="nav-link" href="#">Single Product</Link>
                   </li> */}
