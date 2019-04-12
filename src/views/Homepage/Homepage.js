@@ -13,7 +13,7 @@ export default class Homepage extends Component {
     loading: true
   }
   async componentDidMount() {
-      await fetch('/products')
+      await fetch('https://ecomm-fullstack-backend.herokuapp.com/products')
               .then( res => res.json())
               .then(products => this.setState({ products, loading: false }))
   }

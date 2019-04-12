@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../../assets/images/bmw-logo.png'
 
 export default class Carousel extends Component {
   state={
@@ -7,7 +6,7 @@ export default class Carousel extends Component {
     loading: true
   }
   async componentDidMount() {
-      await fetch('/sliderimages')
+      await fetch('https://ecomm-fullstack-backend.herokuapp.com/sliderimages')
               .then( res => res.json())
               .then( images => this.setState({ images, loading: false }))
   }
