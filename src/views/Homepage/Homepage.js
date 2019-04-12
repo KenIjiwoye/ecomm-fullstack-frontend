@@ -19,19 +19,19 @@ export default class Homepage extends Component {
   }
 
   getSedans = async () =>{
-    await fetch('/products/?category=sedan')
+    await fetch('https://ecomm-fullstack-backend.herokuapp.com/products/?category=sedan')
             .then( res => res.json())
             .then( products => this.setState({ products }))
   }
   
   getSavs = async () =>{
-    await fetch('/products/?category=sav')
+    await fetch('https://ecomm-fullstack-backend.herokuapp.com/products/?category=sav')
             .then( res => res.json())
             .then( products => this.setState({ products }))
   }
   
   getAll = async () =>{
-    await fetch('/products')
+    await fetch('https://ecomm-fullstack-backend.herokuapp.com/products')
             .then( res => res.json())
             .then( products => this.setState({ products }))
   }
