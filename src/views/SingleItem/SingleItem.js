@@ -34,7 +34,7 @@ export default class SingleItem extends Component {
                             4.0 stars
                         </div>
                         </div>
-                        <Reviews />
+                        {/* <Reviews /> */}
                     </div>
                     </div>
                     </div>
