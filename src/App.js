@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './assets/css/shop-hompage.css'
 import { Switch, Route } from 'react-router-dom'
@@ -8,7 +7,7 @@ import SingleItem from './views/SingleItem/SingleItem';
 
 class App extends Component {
   render() {
-    return (
+    return (      
       <div>
         <Switch>
           <Route exact path='/' component={Homepage} />

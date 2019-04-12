@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import LoadingScreen from 'react-loading-screen';
+import logo from '../../assets/images/bmw-logo.png'
 import Navbar from '../../components/Navbar/Navbar'
 import Sidenav from '../../components/Sidenav/Sidenav';
 import Carousel from '../../components/Carousel/Carousel';
@@ -8,11 +10,12 @@ import Footer from '../../components/Footer/Footer';
 export default class Homepage extends Component {
   state={
     products: [],
+    loading: true
   }
   async componentDidMount() {
       await fetch('/products')
               .then( res => res.json())
-              .then(products => this.setState({ products }))
+              .then(products => this.setState({ products, loading: false }))
   }
 
   getSedans = async () =>{
@@ -37,6 +40,14 @@ export default class Homepage extends Component {
         <ShopItem key={i} product={p} />
       ))
         return (
+          <LoadingScreen
+            loading={this.state.loading}
+            bgColor='#272B30'
+            spinnerColor='#9ee5f8'
+            textColor='#676767'
+            logoSrc={logo}
+            text='Loading, please wait...'
+          > 
             <div>
             <Navbar />
             <div class="container">
@@ -54,6 +65,8 @@ export default class Homepage extends Component {
             </div>
             <Footer />
           </div>
+          </LoadingScreen>
+
         );
     }
 }

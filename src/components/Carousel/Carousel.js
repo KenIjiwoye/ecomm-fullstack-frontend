@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
+import logo from '../../assets/images/bmw-logo.png'
 
 export default class Carousel extends Component {
   state={
     images: [],
-    isLoading: true
+    loading: true
   }
   async componentDidMount() {
       await fetch('/sliderimages')
               .then( res => res.json())
-              .then( images => this.setState({ images, isLoading: false }))
+              .then( images => this.setState({ images, loading: false }))
   }
     render() {
       console.log('images ==>',this.state.images)
-      if(this.state.isLoading){
-        return <h1>Loading up...</h1>
-      }
+      // if(this.state.loading){
+      //   return <h1>Loading up...</h1>
+      // }
       let slider = this.state.images.map( (image, i) =>(
         <div key={i} class={`carousel-item ${i == 0 ? 'active': ''}`}>
           <img style={styles.img} class="d-block img-fluid" src={image.image.url} alt=""/>
         </div>
       ))
         return (
+                            
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
