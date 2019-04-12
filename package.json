@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:1337",
+  "proxy": "https://ecomm-fullstack-backend.herokuapp.com",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
